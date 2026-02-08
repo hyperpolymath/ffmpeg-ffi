@@ -1,0 +1,16 @@
+# SPDX-License-Identifier: PMPL-1.0-or-later
+[package]
+name = "ffmpeg-shim"
+version = "0.1.0"
+edition = "2021"
+license = "AGPL-3.0-or-later"
+description = "Rust shim exposing FFmpeg struct accessors via C ABI"
+
+[lib]
+crate-type = ["cdylib", "staticlib"]
+
+[dependencies]
+ffmpeg-sys-next = "7"
+
+[build-dependencies]
+# No bindgen needed - ffmpeg-sys-next includes bindings
