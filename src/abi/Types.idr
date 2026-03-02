@@ -1,10 +1,9 @@
-||| ABI Type Definitions Template
+-- SPDX-License-Identifier: PMPL-1.0-or-later
+||| ABI Type Definitions for ffmpeg-ffi
 |||
-||| This module defines the Application Binary Interface (ABI) for this library.
-||| All type definitions include formal proofs of correctness.
-|||
-||| Replace Ffmpeg with your project name.
-||| Replace {{TYPES}} with your actual type definitions.
+||| This module defines the Application Binary Interface (ABI) for the
+||| ffmpeg-ffi library. All type definitions include formal proofs of
+||| correctness for cross-language FFI safety.
 |||
 ||| @see https://idris2.readthedocs.io for Idris2 documentation
 

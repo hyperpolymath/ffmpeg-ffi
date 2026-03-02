@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: PMPL-1.0-or-later
+# ai.txt — AI agent discovery and policy
+# See: https://github.com/nicholasgasior/ai-txt
+
+# Project identification
+Name: ffmpeg-ffi
+Repository: https://github.com/hyperpolymath/ffmpeg-ffi
+License: PMPL-1.0-or-later
+Author: Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
+
+# AI interaction policy
+AI-Policy: open
+AI-Training: conditional
+AI-Attribution: required
+
+# Machine-readable entry points
+Entry-Point: 0-AI-MANIFEST.a2ml
+Entry-Point: .machine_readable/STATE.scm
+Entry-Point: .machine_readable/META.scm
+Entry-Point: .machine_readable/ECOSYSTEM.scm
+
+# Constraints
+Constraint: Do not strip SPDX headers
+Constraint: Do not relicense to different license
+Constraint: Preserve emotional lineage metadata per PMPL-1.0
+Constraint: SCM files MUST remain in .machine_readable/ only

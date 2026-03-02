@@ -3,8 +3,11 @@
 name = "ffmpeg-shim"
 version = "0.1.0"
 edition = "2021"
-license = "AGPL-3.0-or-later"
+license = "MPL-2.0"
+# (PMPL-1.0-or-later preferred; MPL-2.0 required for crates.io/Rust ecosystem)
+authors = ["Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>"]
 description = "Rust shim exposing FFmpeg struct accessors via C ABI"
+repository = "https://github.com/hyperpolymath/ffmpeg-ffi"
 
 [lib]
 crate-type = ["cdylib", "staticlib"]

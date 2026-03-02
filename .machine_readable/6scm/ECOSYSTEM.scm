@@ -1,13 +1,19 @@
 ;; SPDX-License-Identifier: PMPL-1.0-or-later
-;; ECOSYSTEM.scm - Project ecosystem positioning
+;; ECOSYSTEM.scm - Project ecosystem positioning for ffmpeg-ffi
 
 (ecosystem
   ((version . "1.0.0")
-   (name . "zig-ffmpeg-ffi")
+   (name . "ffmpeg-ffi")
    (type . "library")
-   (purpose . "FFI bindings for FFmpeg multimedia library")
+   (purpose . "Zig FFI bindings for FFmpeg multimedia libraries with Idris2 ABI proofs")
    (position-in-ecosystem . "infrastructure")
    (related-projects
-     ((zig-nickel-ffi . "sibling-ffi")))
-   (what-this-is . ("Zig FFI bindings"))
-   (what-this-is-not . ("A reimplementation"))))
+     ((proven-servers . "sibling-ffi-pattern")
+      (developer-ecosystem . "parent-ecosystem")))
+   (what-this-is . ("Zig FFI bindings for FFmpeg"
+                     "Idris2 ABI definitions with dependent type proofs"
+                     "Rust shim for opaque struct field access"
+                     "C-compatible FFI exports for multi-language consumption"))
+   (what-this-is-not . ("A reimplementation of FFmpeg"
+                         "A media processing framework"
+                         "A command-line tool"))))

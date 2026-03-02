@@ -1,9 +1,12 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: PMPL-1.0-or-later
 # asdf version management
 # Run 'asdf install' to install all tools
 
-# Primary runtime
-deno 2.1.4
+# Primary build tool
+zig 0.13.0
 
-# Build tools
+# Task runner
 just 1.36.0
+
+# Rust (for shim)
+rust nightly

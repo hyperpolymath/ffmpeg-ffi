@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-License-Identifier: PMPL-1.0-or-later
 //! Rust shim for FFmpeg - exposes struct field accessors via C ABI
 //!
 //! This allows Zig to use FFmpeg without @cImport by providing

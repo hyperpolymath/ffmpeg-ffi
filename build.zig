@@ -1,5 +1,5 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
-//! Build configuration for zig-ffmpeg-ffi
+// SPDX-License-Identifier: PMPL-1.0-or-later
+//! Build configuration for ffmpeg-ffi
 //!
 //! Requires FFmpeg development libraries:
 //! - Fedora: sudo dnf install ffmpeg-free-devel
@@ -14,7 +14,7 @@ pub fn build(b: *std.Build) void {
 
     // Main library
     const lib = b.addStaticLibrary(.{
-        .name = "zig-ffmpeg-ffi",
+        .name = "ffmpeg-ffi",
         .root_source_file = b.path("src/main.zig"),
         .target = target,
         .optimize = optimize,

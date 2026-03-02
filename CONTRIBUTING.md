@@ -1,13 +1,13 @@
 # Clone the repository
-git clone https://{{FORGE}}/hyperpolymath/language-bridges.git
-cd language-bridges
+git clone https://github.com/hyperpolymath/ffmpeg-ffi.git
+cd ffmpeg-ffi
 
 # Using Nix (recommended for reproducibility)
 nix develop
 
 # Or using toolbox/distrobox
-toolbox create language-bridges-dev
-toolbox enter language-bridges-dev
+toolbox create ffmpeg-ffi-dev
+toolbox enter ffmpeg-ffi-dev
 # Install dependencies manually
 
 # Verify setup
@@ -17,7 +17,7 @@ just test    # Run test suite
 
 ### Repository Structure
 ```
-language-bridges/
+ffmpeg-ffi/
 ├── src/                 # Source code (Perimeter 1-2)
 ├── lib/                 # Library code (Perimeter 1-2)
 ├── extensions/          # Extensions (Perimeter 2)
@@ -53,7 +53,7 @@ language-bridges/
 
 **Before reporting**:
 1. Search existing issues
-2. Check if it's already fixed in `{{MAIN_BRANCH}}`
+2. Check if it's already fixed in `main`
 3. Determine which perimeter the bug affects
 
 **When reporting**:
@@ -86,10 +86,10 @@ Use the [feature request template](.github/ISSUE_TEMPLATE/feature_request.md) an
 
 Look for issues labelled:
 
-- [`good first issue`](https://{{FORGE}}/hyperpolymath/language-bridges/labels/good%20first%20issue) — Simple Perimeter 3 tasks
-- [`help wanted`](https://{{FORGE}}/hyperpolymath/language-bridges/labels/help%20wanted) — Community help needed
-- [`documentation`](https://{{FORGE}}/hyperpolymath/language-bridges/labels/documentation) — Docs improvements
-- [`perimeter-3`](https://{{FORGE}}/hyperpolymath/language-bridges/labels/perimeter-3) — Community sandbox scope
+- [`good first issue`](https://github.com/hyperpolymath/ffmpeg-ffi/labels/good%20first%20issue) — Simple Perimeter 3 tasks
+- [`help wanted`](https://github.com/hyperpolymath/ffmpeg-ffi/labels/help%20wanted) — Community help needed
+- [`documentation`](https://github.com/hyperpolymath/ffmpeg-ffi/labels/documentation) — Docs improvements
+- [`perimeter-3`](https://github.com/hyperpolymath/ffmpeg-ffi/labels/perimeter-3) — Community sandbox scope
 
 ---
 

@@ -1,0 +1,49 @@
+;; SPDX-License-Identifier: PMPL-1.0-or-later
+;; 0-AI-MANIFEST.a2ml — Universal AI agent entry point for ffmpeg-ffi
+;; Media-Type: application/vnd.a2ml+scm
+
+(ai-manifest
+  (version "1.0")
+  (project "ffmpeg-ffi")
+  (description "Zig FFI bindings for FFmpeg multimedia libraries with Idris2 ABI proofs")
+
+  ;; Canonical file locations — these are authoritative
+  (canonical-locations
+    (scm-files ".machine_readable/")   ;; STATE.scm, META.scm, ECOSYSTEM.scm, etc.
+    (abi-definitions "src/abi/")        ;; Idris2 ABI definitions
+    (ffi-implementation "ffi/zig/")     ;; Zig FFI implementation (template)
+    (core-wrapper "src/main.zig")       ;; Main Zig FFI wrapper linking to FFmpeg
+    (rust-shim "shim/")                 ;; Rust shim for opaque struct accessors
+    (examples "examples/")             ;; Usage examples
+    (workflows ".github/workflows/"))  ;; CI/CD
+
+  ;; Critical invariants — NEVER violate these
+  (invariants
+    ("SCM files MUST be in .machine_readable/ ONLY — never in root")
+    ("SPDX headers MUST be present on ALL source files")
+    ("License is PMPL-1.0-or-later for all hyperpolymath code")
+    ("ABI definitions are in Idris2 (src/abi/) per universal standard")
+    ("FFI implementations are in Zig (ffi/zig/) per universal standard")
+    ("Author is Jonathan D.A. Jewell — single space between A. and Jewell")
+    ("No believe_me, assert_total, assert_smaller in Idris2 code")
+    ("Rust shim uses unsafe only for FFI boundaries with safety comments"))
+
+  ;; Architecture overview
+  (architecture
+    (layers
+      ("Idris2 ABI" "Formal type definitions with dependent type proofs")
+      ("Zig FFI" "C-compatible implementation wrapping FFmpeg libraries")
+      ("Rust shim" "Opaque struct field accessors for Zig to use without @cImport")
+      ("C FFI exports" "Stable C ABI for consumption by other languages"))
+    (data-flow "Idris2 ABI -> C headers -> Zig wrapper -> FFmpeg system libs"))
+
+  ;; Session lifecycle hooks
+  (on-enter
+    ("Read this manifest first")
+    ("Read .machine_readable/STATE.scm for current progress")
+    ("Read .machine_readable/META.scm for architectural decisions")
+    ("Check src/abi/ for any holes (?) in proofs"))
+
+  (on-exit
+    ("Update .machine_readable/STATE.scm with session progress")
+    ("Note any new proof obligations or TODOs")))

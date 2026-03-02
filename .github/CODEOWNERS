@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: PMPL-1.0-or-later
+# CODEOWNERS — ffmpeg-ffi
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner for everything in the repo
+* @hyperpolymath
+
+# ABI definitions (Idris2) — strict review required
+/src/abi/ @hyperpolymath
+
+# FFI implementation (Zig) — strict review required
+/ffi/zig/ @hyperpolymath
+
+# Rust shim — strict review required
+/shim/ @hyperpolymath
+
+# Infrastructure and CI
+/.github/ @hyperpolymath
+/.machine_readable/ @hyperpolymath
+/.bot_directives/ @hyperpolymath

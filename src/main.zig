@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-License-Identifier: PMPL-1.0-or-later
 //! Zig FFI bindings for FFmpeg (libavformat, libavcodec, libavutil)
 //!
 //! Provides high-level Zig interface for video/audio metadata extraction

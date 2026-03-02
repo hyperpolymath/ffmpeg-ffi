@@ -1,0 +1,137 @@
+// SPDX-License-Identifier: PMPL-1.0-or-later
+= ffmpeg-ffi
+Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
+:toc: macro
+:toclevels: 2
+:source-highlighter: rouge
+
+image:https://img.shields.io/badge/license-PMPL--1.0--or--later-blue[License, link=LICENSE]
+image:https://img.shields.io/badge/lang-Zig-F7A41D[Zig]
+image:https://img.shields.io/badge/lang-Idris2-red[Idris2]
+image:https://img.shields.io/badge/ABI--FFI-Idris2%2FZig-brightgreen[ABI-FFI Standard]
+image:https://github.com/hyperpolymath/ffmpeg-ffi/actions/workflows/hypatia-scan.yml/badge.svg[Hypatia Scan, link=https://github.com/hyperpolymath/ffmpeg-ffi/actions/workflows/hypatia-scan.yml]
+
+Zig FFI bindings for FFmpeg multimedia libraries (libavformat, libavcodec, libavutil, swresample, swscale), with formally verified ABI definitions in Idris2.
+
+toc::[]
+
+== Overview
+
+`ffmpeg-ffi` provides a high-level Zig interface for FFmpeg operations (media file probing, metadata extraction, stream information) without subprocess calls to `ffprobe`/`ffmpeg`. It replaces the typical C header approach with direct `extern "C"` declarations and a thin Rust shim for opaque struct field access.
+
+=== Architecture
+
+The repository follows the hyperpolymath ABI/FFI Universal Standard:
+
+* **Idris2 ABI** (`src/abi/`) -- Formal type definitions with dependent type proofs for memory layout, alignment, and C ABI compliance
+* **Zig FFI** (`ffi/zig/`) -- Generic C-compatible FFI implementation template
+* **Core wrapper** (`src/main.zig`) -- Production FFmpeg bindings with C FFI exports
+* **Rust shim** (`shim/`) -- Thin accessor layer for FFmpeg opaque struct fields
+
+== Prerequisites
+
+FFmpeg development libraries must be installed on your system:
+
+[source,bash]
+----
+# Fedora
+sudo dnf install ffmpeg-free-devel
+
+# Ubuntu / Debian
+sudo apt install libavformat-dev libavcodec-dev libavutil-dev libswresample-dev libswscale-dev
+
+# macOS
+brew install ffmpeg
+----
+
+== Building
+
+[source,bash]
+----
+# Build static and shared libraries
+zig build
+
+# Build and run the example probe tool
+zig build run -- /path/to/video.mp4
+
+# Run tests
+zig build test
+----
+
+The Rust shim (required for opaque struct field access) is built separately:
+
+[source,bash]
+----
+cd shim
+cargo build --release
+----
+
+== Usage
+
+=== Zig API
+
+[source,zig]
+----
+const ffmpeg = @import("ffmpeg");
+
+var info = try ffmpeg.probe(allocator, "video.mp4");
+defer info.deinit();
+
+std.debug.print("Format: {s}\n", .{info.format_name orelse "unknown"});
+std.debug.print("Duration: {d:.2}s\n", .{info.duration_seconds});
+std.debug.print("Streams: {}\n", .{info.streams.len});
+----
+
+=== C FFI
+
+The library exports a stable C ABI for use from any language:
+
+[source,c]
+----
+// Probe a file
+FFIMediaInfo* info = ffmpeg_probe("video.mp4");
+if (info) {
+    double duration = ffmpeg_get_duration(info);
+    uint32_t streams = ffmpeg_get_stream_count(info);
+    ffmpeg_free(info);
+}
+----
+
+== Project Structure
+
+[source]
+----
+ffmpeg-ffi/
+├── src/
+│   ├── main.zig            # Core Zig FFmpeg bindings + C FFI exports
+│   └── abi/                # Idris2 ABI definitions (formally verified)
+│       ├── Types.idr       # Core types, handles, result codes
+│       ├── Layout.idr      # Memory layout proofs
+│       └── Foreign.idr     # FFI function declarations
+├── ffi/zig/                # Generic Zig FFI template implementation
+│   ├── build.zig
+│   ├── src/main.zig
+│   └── test/integration_test.zig
+├── shim/                   # Rust shim for FFmpeg opaque struct access
+│   ├── Cargo.toml
+│   └── src/lib.rs
+├── examples/
+│   └── probe.zig           # Example: probe media file metadata
+├── .machine_readable/      # SCM checkpoint files
+├── .bot_directives/        # gitbot-fleet directives
+└── .well-known/            # security.txt, humans.txt, ai.txt
+----
+
+== License
+
+link:LICENSE[Palimpsest License (PMPL-1.0-or-later)]
+
+Copyright (c) 2025-2026 Jonathan D.A. Jewell (hyperpolymath) <j.d.a.jewell@open.ac.uk>
+
+== Contributing
+
+See link:CONTRIBUTING.md[CONTRIBUTING.md] for guidelines.
+
+== Security
+
+See link:SECURITY.md[SECURITY.md] for reporting vulnerabilities.
