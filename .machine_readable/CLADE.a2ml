@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: PMPL-1.0-or-later
+# Clade declaration — part of the gv-clade-index registry
+# See: https://github.com/hyperpolymath/gv-clade-index
+
+[identity]
+uuid = "e9ae1bef-073a-51aa-a87a-ecd91565e6c1"
+primary-forge = "github"
+primary-owner = "hyperpolymath"
+canonical-name = "ffmpeg-ffi"
+prefixed-name = "dx-ffmpeg-ffi"
+
+[clade]
+primary = "dx"
+secondary = []
+assigned = "2026-03-16"
+rationale = ""
+
+[forges]
+github = "hyperpolymath/ffmpeg-ffi"
+gitlab = "hyperpolymath/ffmpeg-ffi"
+bitbucket = "hyperpolymath/ffmpeg-ffi"
+
+[lineage]
+type = "standalone"
+parent = "FFI bindings for FFmpeg"
+born = "2026-03-16"
