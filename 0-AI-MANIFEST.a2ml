@@ -9,7 +9,7 @@
 
   ;; Canonical file locations — these are authoritative
   (canonical-locations
-    (scm-files ".machine_readable/")   ;; STATE.scm, META.scm, ECOSYSTEM.scm, etc.
+    (scm-files ".machine_readable/")   ;; .machine_readable/6a2/STATE.a2ml, .machine_readable/6a2/META.a2ml, .machine_readable/6a2/ECOSYSTEM.a2ml, etc.
     (abi-definitions "src/abi/")        ;; Idris2 ABI definitions
     (ffi-implementation "ffi/zig/")     ;; Zig FFI implementation (template)
     (core-wrapper "src/main.zig")       ;; Main Zig FFI wrapper linking to FFmpeg
@@ -40,10 +40,10 @@
   ;; Session lifecycle hooks
   (on-enter
     ("Read this manifest first")
-    ("Read .machine_readable/STATE.scm for current progress")
-    ("Read .machine_readable/META.scm for architectural decisions")
+    ("Read `.machine_readable/6a2/STATE.a2ml` for current progress")
+    ("Read `.machine_readable/6a2/META.a2ml` for architectural decisions")
     ("Check src/abi/ for any holes (?) in proofs"))
 
   (on-exit
-    ("Update .machine_readable/STATE.scm with session progress")
+    ("Update `.machine_readable/6a2/STATE.a2ml` with session progress")
     ("Note any new proof obligations or TODOs")))
