@@ -2,7 +2,7 @@
 = ffmpeg-ffi -- EXPLAINME
 :toc: preamble
 
-== "Zig FFI Bindings for FFmpeg with Formally Verified ABI Definitions in Idris2"
+== Zig FFI Bindings for FFmpeg with Formally Verified ABI Definitions in Idris2
 
 [quote, README.adoc]
 ____
