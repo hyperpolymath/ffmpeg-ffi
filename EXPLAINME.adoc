@@ -1,27 +1,41 @@
-= Ffmpeg Ffi — EXPLAINME
+// SPDX-License-Identifier: PMPL-1.0-or-later
+= ffmpeg-ffi -- EXPLAINME
 :toc: preamble
 
-This document backs up the claims made in README with evidence and rationale.
+== "Zig FFI Bindings for FFmpeg with Formally Verified ABI Definitions in Idris2"
 
-== What Is This?
+[quote, README.adoc]
+____
+Zig FFI bindings for FFmpeg multimedia libraries (libavformat, libavcodec, libavutil,
+swresample, swscale), with formally verified ABI definitions in Idris2.
+____
 
-Ffmpeg Ffi is a hyperpolymath project. See README.adoc for usage.
+The repo follows the hyperpolymath ABI/FFI Universal Standard: Idris2 defines the ABI
+with dependent-type proofs for memory layout and alignment, Zig provides the C-compatible
+FFI, and a thin Rust shim handles FFmpeg opaque struct field access. See
+link:src/abi/Layout.idr[] for the memory layout proofs.
 
-== Why These Choices?
+=== Evidence
 
-=== Language
+[cols="2,3"]
+|===
+| Path | Proves
 
-The language(s) used in this project were chosen per the hyperpolymath
-language policy (see CLAUDE.md for the full list of allowed/banned languages).
+| `src/abi/Types.idr`
+| Idris2 ABI type definitions exist
 
-=== Architecture
+| `src/abi/Layout.idr`
+| Memory layout proofs are present
 
-Architecture decisions are documented in `.machine_readable/` checkpoint files.
+| `src/abi/Foreign.idr`
+| FFI function declarations are formally specified
 
-== Alternatives Considered
+| `src/main.zig`
+| Core Zig FFmpeg bindings with C FFI exports
 
-(To be filled in as the project matures.)
+| `ffi/zig/`
+| Generic Zig FFI template implementation
 
-== Proof of Claims
-
-(Link formal verification results from the `proven` repo where applicable.)
+| `shim/src/lib.rs`
+| Rust shim for opaque struct field access
+|===
