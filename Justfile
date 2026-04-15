@@ -2,6 +2,8 @@
 # Justfile for ffmpeg-ffi
 
 # Default recipe — list available commands
+import? "contractile.just"
+
 default:
     @just --list
 
