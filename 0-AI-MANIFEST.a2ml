@@ -1,4 +1,4 @@
-;; SPDX-License-Identifier: PMPL-1.0-or-later
+;; SPDX-License-Identifier: MPL-2.0
 ;; 0-AI-MANIFEST.a2ml — Universal AI agent entry point for ffmpeg-ffi
 ;; Media-Type: application/vnd.a2ml+scm
 
@@ -21,7 +21,7 @@
   (invariants
     ("SCM files MUST be in .machine_readable/ ONLY — never in root")
     ("SPDX headers MUST be present on ALL source files")
-    ("License is PMPL-1.0-or-later for all hyperpolymath code")
+    ("License is MPL-2.0 for all hyperpolymath code")
     ("ABI definitions are in Idris2 (src/abi/) per universal standard")
     ("FFI implementations are in Zig (ffi/zig/) per universal standard")
     ("Author is Jonathan D.A. Jewell — single space between A. and Jewell")
