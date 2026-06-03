@@ -1,11 +1,14 @@
 // SPDX-License-Identifier: MPL-2.0
+// Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
 = ffmpeg-ffi
+image:https://img.shields.io/badge/OpenSSF-Best_Practices-green?logo=openssourcesecurity[OpenSSF Best Practices,link="https://www.bestpractices.dev/en/projects/new?repo_url=https://github.com/hyperpolymath/ffmpeg-ffi"]
+
 Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
 :toc: macro
 :toclevels: 2
 :source-highlighter: rouge
 
-image:https://img.shields.io/badge/license-PMPL--1.0--or--later-blue[License, link=LICENSE]
+image:https://img.shields.io/badge/license-MPL--2.0-blue[License, link=LICENSE]
 image:https://img.shields.io/badge/lang-Zig-F7A41D[Zig]
 image:https://img.shields.io/badge/lang-Idris2-red[Idris2]
 image:https://img.shields.io/badge/ABI--FFI-Idris2%2FZig-brightgreen[ABI-FFI Standard]
@@ -124,7 +127,7 @@ ffmpeg-ffi/
 
 == License
 
-link:LICENSE[Palimpsest License (MPL-2.0)]
+link:LICENSE[MPL-2.0 (MPL-2.0)]
 
 Copyright (c) 2025-2026 Jonathan D.A. Jewell (hyperpolymath) <j.d.a.jewell@open.ac.uk>
 
