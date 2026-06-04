@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MPL-2.0
+// Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
 //! Rust shim for FFmpeg - exposes struct field accessors via C ABI
 //!
 //! This allows Zig to use FFmpeg without @cImport by providing

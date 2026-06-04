@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MPL-2.0
+// Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
 //! Zig FFI bindings for FFmpeg (libavformat, libavcodec, libavutil)
 //!
 //! Provides high-level Zig interface for video/audio metadata extraction
