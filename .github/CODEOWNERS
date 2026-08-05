@@ -1,20 +1,4 @@
 # SPDX-License-Identifier: MPL-2.0
-# CODEOWNERS — ffmpeg-ffi
-# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
-
-# Default owner for everything in the repo
-* @hyperpolymath
-
-# ABI definitions (Idris2) — strict review required
-/src/abi/ @hyperpolymath
-
-# FFI implementation (Zig) — strict review required
-/ffi/zig/ @hyperpolymath
-
-# Rust shim — strict review required
-/shim/ @hyperpolymath
-
-# Infrastructure and CI
-/.github/ @hyperpolymath
-/.machine_readable/ @hyperpolymath
-/.bot_directives/ @hyperpolymath
+# Solo-maintained hyperpolymath repo: no owner lines by policy.
+# See hyperpolymath/standards CODEOWNERS-POLICY.adoc (Rule 1).
+# Sole-maintainer review is moot; SPDX headers carry attribution.
