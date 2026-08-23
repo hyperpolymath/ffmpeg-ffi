@@ -9,7 +9,7 @@
 ```
                         ┌─────────────────────────────────────────┐
                         │              FFI CONSUMERS              │
-                        │        (Rust, Elixir, ReScript, etc.)   │
+                        │        (Rust, Elixir, AffineScript, etc.)   │
                         └───────────────────┬─────────────────────┘
                                             │ C ABI Bridge
                                             ▼
